@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+/* 共通部分 */
+*{
+  margin: 0;
+  padding: 0;
+}
+header {
+  /* ヘッダーを固定 */
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  background: #000000;
+}
+#main_nav {
+  position: absolute;
+  top: 0;
+  /* ナビメニューを左に隠した状態になる */
+  left: -30%;
+  width: 30%;
+  height: 40vh;
+  background: #fff;
+  /* 0.7秒かけてナビメニューがスライドする */
+  transition: 0.7s;
+}
+#main_nav ul{
+  padding-top: 80px;
+}
+#main_nav ul li{
+  list-style-type: none;
+  font-size: 20px;
+}
+#main_nav a{
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  margin: 0 15px;
+  padding: 10px;
+  transition: 0.5s;
+}
+#main_nav li a:hover{
+  color: #ffffff;
+  background: #cd5c5c;
+  border-bottom: none;
+}
+#hamburger{
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 50px;
+  height: 44px;
+  cursor: pointer;
+  transition: 1s;
+}
+.inner_line{
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #ffffff;
+  transition: 1s;
+  border-radius: 4px;
+}
+#line1{
+  top: 0;
+}
+#line2{
+  top: 20px;
+}
+#line3{
+  bottom: 0px;
+}
+.in{
+  transform: translateX(100%);
+}
+.line_1,.line_2,.line_3{
+  background: #000000;
+}
+.line_1{
+  /* -45度回転させる */
+  transform: rotate(-135deg) scaleX(-0.7);
+  top: 0;
+}
+.line_2{
+  transform: translateX(-20%);
+}
+.line_3{
+  /* 45度回転させる */
+  transform: rotate(135deg) scaleX(-0.7);
+  bottom: 0;
+}
+h1{
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20px;
+}
+#main_home{
+  background-image: url(photo/texture_1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 95vh;
+  text-align: center;
+}
+.img-vh{
+  height: 95vh;
+}
+footer{
+  background: #432;
+  text-align: center;
+  padding-top: 3px;
+  height: 27px;
+}
+footer p{
+  color: #fff;
+  font-size: 0.875rem;
+}
+/* モバイル版 */
+@media (max-width: 600px){
+  header{
+    width: 100vw;
+    height: 10vh;
+  }
+  h1{
+    font-size: 20px;
+    margin-top: 3vh;
+  }
+  #main_nav{
+    left: -100%;
+    width: 100%;
+    height: 40vh;
+  }
+  .inner_line{
+    width: 25px;
+  }
+  #line1{
+    top: 3px;
+  }
+  #line2{
+    top: 15px;
+  }
+  #line3{
+    bottom: 13px;
+  }
+  #main_home{
+    width: 100vw;
+  }
+  #main_home img{
+    width: 100vw;
+  }
+  .img-vw{
+    width: 100vw;
+  }
+  footer {
+    width: 100vw;
+  }
+}
